@@ -26,11 +26,13 @@ class UploadFileForm(FlaskForm):
 def home():
     if request.method == 'POST':
         file = request.files['file']
+        dado = request.form['dado']
+        print(dado)
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             save_local = os.path.join('static',filename)
             file.save(save_local)
-            output = processar(save_local)
+            output = processar(save_local, dado)
             return redirect(url_for('resultado'))
 
     

@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from sklearn import metrics
 
 
-def processar(filename):
+def processar(filename, dado):
     conjunto_dados: List[Dado] = []
     with open(filename) as arquivo:
         for linha in arquivo.readlines(): 
@@ -17,14 +17,15 @@ def processar(filename):
             conjunto_dados.append(dado_arquivo)
     arquivo.close()
     kvizinhos = KNN(3, conjunto_dados)
-    dado_teste: NovoDado = NovoDado([7.6, 3, 6.6, 2.1])
+    dado_teste: NovoDado = NovoDado([dado])
     kvizinhos.executar(dado_teste)
-    color = 'white'
-    confusion_matrix = metrics.confusion_matrix(conjunto_dados, dado_teste)
-    matrix = metrics.ConfusionMatrixDisplay(confusion_matrix=confusion_matrix, display_labels=['False','True'])
-    matrix.ax_.set_title('Confusion Matrix', color=color)
-    plt.xlabel('Predicted Label', color=color)
-    plt.ylabel('True Label', color=color)
-    plt.gcf().axes[0].tick_params(colors=color)
-    plt.gcf().axes[1].tick_params(colors=color)
-    plt.savefig('./static/files')
+    print(dado_teste.get_classe())
+    # color = 'white'
+    # confusion_matrix = metrics.confusion_matrix(conjunto_dados, dado_teste)
+    # matrix = metrics.ConfusionMatrixDisplay(confusion_matrix=confusion_matrix, display_labels=['False','True'])
+    # matrix.ax_.set_title('Confusion Matrix', color=color)
+    # plt.xlabel('Predicted Label', color=color)
+    # plt.ylabel('True Label', color=color)
+    # plt.gcf().axes[0].tick_params(colors=color)
+    # plt.gcf().axes[1].tick_params(colors=color)
+    # plt.savefig('./static/files')
