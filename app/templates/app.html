@@ -9,9 +9,9 @@
 
 <body>
   <form method="post" enctype="multipart/form-data">
-    {{form.hidden_tag()}}
-    {{form.file()}}
-    {{form.submit()}}
+    <label for="file">Adicione seu Arquivo</label>
+    <input type="file" id="file" name="file" accept=".csv, .txt"><br />
+    <button>Enviar Arquivo</button>
   </form>
 </body>
 </html>
