@@ -18,11 +18,6 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 async def read_item(request: Request):
     return templates.TemplateResponse("main.html", {"request": request})
 
-@app.post("/upload", response_class=HTMLResponse)
-async def post_upload_form(request: Request, form_data: UploadForm = Depends(UploadForm.as_form)):
-    #content = await file.read()
-    return templates.TemplateResponse("main.html", {"request": request})
-
 # HealthCheck
 # @app.get("", response_model=HealthCheck, tags=["Healthcheck"])
 # @app.get("/", response_model=HealthCheck, tags=["Healthcheck"], include_in_schema=False)

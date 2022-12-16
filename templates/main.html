@@ -9,9 +9,10 @@
 
 <body style="background-color: grey;">
     <h1>KNN Tester Mobile</h1>
-    <form action="/upload" method="POST" enctype="multipart/form-data" style="border-style: solid; border-width: 3px; text-align: left;">
+    <form action="api/v1/knn/train" method="POST" enctype="multipart/form-data" style="border-style: solid; border-width: 3px; text-align: center;">
         <br/>
         <label>Insira seu Arquivo a ser classificado</label>
+        <br/>
         <br/>
         <input type="file" accept=".csv" name="file" id="file">
         <br/>
@@ -35,7 +36,13 @@
         display: inline-block;
         font-size: 16px;
         margin: 4px 2px; border-radius: 8px;">Enviar Arquivo</button>
+        <br/>
+        <br/>
+
     </form>
+    <br/>
+
+    <a>Aviso: Caso a classe não esteja na última coluna do arquivo CSV. O algoritmo retornará uma tela de erro.</a>
 </body>
 
 </html>
