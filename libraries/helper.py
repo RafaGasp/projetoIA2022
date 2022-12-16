@@ -13,8 +13,11 @@ def file_to_df(contents):
     return df
 
 def train_test_split(df, keyword):
-    for index, value in enumerate(df[f'{keyword}'].unique()):
-        df = df.replace({value: index})
+    try:
+        for index, value in enumerate(df[f'{keyword}'].unique()):
+            df = df.replace({value: index})
+    except:
+        pass
     train = df.sample(frac = 0.8)
     return train, df.drop(train.index) 
 

@@ -18,10 +18,10 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 async def read_item(request: Request):
     return templates.TemplateResponse("main.html", {"request": request})
 
-# HealthCheck
-# @app.get("", response_model=HealthCheck, tags=["Healthcheck"])
-# @app.get("/", response_model=HealthCheck, tags=["Healthcheck"], include_in_schema=False)
-# async def healthcheck(request: Request):
-#     return {"message": "OK"}
+HealthCheck
+@app.get("", response_model=HealthCheck, tags=["Healthcheck"])
+@app.get("/", response_model=HealthCheck, tags=["Healthcheck"], include_in_schema=False)
+async def healthcheck(request: Request):
+    return {"message": "OK"}
 
 app.include_router(api_router, prefix="/api/v1")
