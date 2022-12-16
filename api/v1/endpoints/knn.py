@@ -14,7 +14,7 @@ async def training_and_return_mc(keyword: str = Form(), neighbors: int = Form(),
 
     new_cols = [col for col in df.columns if col != str(keyword)] + [str(keyword)]
     df = df[new_cols]
-
+    df=df.dropna()
     train, test = helper.train_test_split(df, keyword)
 
     real, predicts = helper.predict(train, test, neighbors)
