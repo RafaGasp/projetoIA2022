@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KNN Tester Mobile</title>
+</head>
+
+<body style="background-color: grey;">
+    <h1>KNN Tester Mobile</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data" style="border-style: solid; border-width: 3px; text-align: left;">
+        <br/>
+        <label>Insira seu Arquivo a ser classificado</label>
+        <br/>
+        <input type="file" accept=".csv" name="file" id="file">
+        <br/>
+        <br/>
+        <label for="">Insira o nome da Classe disponível em seu Arquivo</label>
+        <br/>
+        <input type="text" name="keyword" id="keyword">
+        <br/>
+        <br/>
+        <label for="">Insira a quantidade de vizinhos</label>
+        <br/>
+        <input type="number" name="neighbors" id="neighbors">
+        <br/>
+        <br/>
+        <button type="submit" style="background-color: orangered;
+        border: none;
+        color: black;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px; border-radius: 8px;">Enviar Arquivo</button>
+    </form>
+</body>
+
+</html>
